@@ -3,6 +3,13 @@
 <h1>Hello</h1>
 
 <p><%= homeContentejs %></p>
-<% console.log(postsejs) %>
+
+<%postsejs.forEach(function(post){%>
+ <h1>  <%= post.title %>  </h1> 
+ <p>  <%= post.posto.substr(0, 100) + '...' %> <a href='post/<%= post.title %>' >Read More</a> </p>
+    <%});%>
+<!-- <% for(var i=0;i<postsejs.length;i++){ %>
+<% console.log(postsejs[i].title) %>
+<%};%> -->
 <%- include('partials/footer') %>
 
